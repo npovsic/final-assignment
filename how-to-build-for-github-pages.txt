@@ -1,0 +1,23 @@
+1. Create vue.config.js
+
+2. Add the following:
+
+    module.exports = {
+        publicPath: ‘PROJECT-NAME'
+    } 
+    
+3. Open config/index.js and change the assetPublicPath in the build section to your project name
+    - the index.html will now find the correct static folder
+    
+4. Run: npm run build
+    - this builds the project
+    
+5. Run the following in git bash:
+
+    git add dist && git commit -m "deploy"
+    
+    git subtree push --prefix dist origin gh-pages
+    
+        - this adds the contents of the dist folder to the gh-pages branch
+        
+6. The new changes are now live
