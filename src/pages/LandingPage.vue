@@ -1,18 +1,25 @@
 <template>
     <main class="parallax-parent">
         <div class="hero-banner parallax-container">
-            <h1 class="title major-mono-font center dark-text">Zaključna naloga</h1>
-            <h2 class="thin major-mono-font dark-text">pri predmetu oblikovanje vizualnih komunikacij</h2>
+            <h1 class="title major-mono-font center dark-text uppercase">Zaključna naloga</h1>
+            
+            <h1 class="thin monospace-font dark-text center subtitle">Pri predmetu oblikovanje vizualnih komunikacij</h1>
+            
+            <h1 class="thin monospace-font dark-text center subtitle">Nejc Povšič</h1>
         </div>
         
         <div class="list-wrapper content-container">
             <div class="list-wrapper__padding-block"></div>
             
+            <h2 class="thin subtitle monospace-font center">Začetek poti</h2>
+            
             <ListOfProjects></ListOfProjects>
+
+            <h2 class="thin subtitle monospace-font center">Prišli ste na cilj</h2>
         </div>
 
         <footer>
-            <p class="major-mono-font right">nejc povšič, 2019</p>
+            <p class="monospace-font uppercase right">Nejc Povšič, 2019</p>
         </footer>
     </main>
 </template>
@@ -66,6 +73,7 @@
     }
     
     .subtitle {
+        font-size: 2rem;
         text-transform: uppercase;
     }
     
@@ -98,12 +106,14 @@
     }
 
     .content-container {
-        display: flex;
         position: relative;
         z-index: 1;
         background: var(--main-background-color);
         width: 100%;
-        flex-direction: column;
-        align-items: center;
+
+        display: flex;
+
+        display: grid;
+        justify-content: center;
     }
 </style>

@@ -1,22 +1,32 @@
 <template>
     <article>
-        <p>Predmet smo začeli z razporeditvijo v skupine. Prva naloga, ki smo jo dobili, je bila predstavitev skupine in ustvarjanje naše identitete.</p>
-        
+        <img :src="'./static/img/homework2/image.png'">
+
         <p>
-            Ker smo bili vsi v skupini študentje Fakultete za računalništvo in informatiko v Ljubljani, smo želeli našo identiteto povezati s tem. Ko smo razmišljali,
-            kako bi to prikazali, smo nekako prišli na imaginarno enoto <i class=""></i>
+            Tipografija je celoten opis oblike črk, razdalje med njimi itd. Izraža neko karakteristiko oziroma ton zapisanega.
+            Za nalogo smo morali zapisati nekaj iz črk, ki to prej niso bile.
         </p>
 
-        <img :src="'./static/img/homework1/NaN.png'">
+        <p>
+            Za predstavo naše črke <span class="bold">i</span> nismo hotel izbrati neke oblike iz okolja, saj je
+            nam je zdelo to malo preveč preprosto, glede na to, da ravne črte najdemo vsepovsod. Porodila se nam je
+            ideja, da bi uporabili zvok za predstavitev črk. Zvok in črka sta preprosto različni dimenziji istega pojava,
+            a imeli smo težavo, kako bi zvok predstavili. Na koncu smo posneli zvok izgovorjave črke i, ga shranili v obliki
+            zvočnih valov in iz tega zapisa ustvarili zapis, ki ga vidimo na sliki.
+        </p>
+        
+        <p>
+            Tudi tukaj smo uporabili naše znanje, ki smo ga pridobili na faksu. Zvočni signal je z ustreznim orodjem zelo
+         preprosto zajeti in ga predstaviti na pregleden način. Ideja se mi je zdela zelo dobra, je pa res, da deluje
+            samo za preproste črke. 
+        </p>
     </article>
 </template>
 
 <script>
-    export default {
-        
-    }
+    export default {}
 </script>
 
 <style>
-    
+
 </style>

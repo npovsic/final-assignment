@@ -26,15 +26,23 @@
         },
         mounted() {
             const vm = this;
-
-            EventBus.$on('openDetails', function (data) {
+            
+            const openDetails = function (data) {
                 vm.showDetails = true;
                 vm.detailsData = data;
-            });
-
-            EventBus.$on('closeDetails', function () {
+            };
+            
+            const closeDetails = function () {
                 vm.showDetails = false;
                 vm.detailsData = null;
+            };
+
+            EventBus.$on('openDetails', openDetails);
+
+            EventBus.$on('closeDetails', closeDetails);
+            
+            document.addEventListener('keydown', function (event) {
+                if (event.keyCode === 27) EventBus.$emit('triggerCloseAnimation');
             });
         }
     }
@@ -71,9 +79,29 @@
         
         color: var(--main-text-color);
     }
+    
+    img {
+        display: block;
+        
+        width: 100%;
+    }
+    
+    p {
+        font-size: 21px;
+
+        line-height: 1.58;
+    }
+    
+    button {
+        font-size: 16px;
+    }
 
     .major-mono-font {
         font-family: 'Major Mono Display', monospace;
+    }
+    
+    .monospace-font {
+        font-family: monospace;
     }
 
     .center {
@@ -94,6 +122,10 @@
 
     .bold {
         font-weight: bold;
+    }
+
+    .light-text {
+        color: var(--main-text-color)
     }
 
     .dark-text {

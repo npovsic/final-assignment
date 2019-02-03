@@ -2,13 +2,13 @@
     <div ref="pageWrapper" class="page-wrapper slide-up">
         <div class="details-page">
             <div class="details-page__container">
-                <div class="details-page__container__title-wrapper" :style="{ borderColor: detailsData.dividerColor }">
-                    <h2 class="details-page__container__title-wrapper__title major-mono-font lowercase">{{detailsData.title}}</h2>
+                <nav class="details-page__container__title-wrapper" :style="{ borderColor: detailsData.dividerColor }">
+                    <h1 class="details-page__container__title-wrapper__title monospace-font">{{detailsData.title}}</h1>
 
                     <button @click="closeDetailsPage">
                         <i class="material-icons">close</i>
                     </button>
-                </div>
+                </nav>
                 
                 <div class="details-page__container__content-wrapper">
                     <component :is="detailsData.component"></component>
@@ -22,11 +22,27 @@
     import { EventBus } from "../helpers/EventBus";
     
     import Homework1 from './detailsTemplates/Homework1';
+    import Homework2 from './detailsTemplates/Homework2';
+    import Homework3 from './detailsTemplates/Homework3';
+    import Homework4 from './detailsTemplates/Homework4';
+    import Homework5 from './detailsTemplates/Homework5';
+    import Homework6 from './detailsTemplates/Homework6';
+    import Homework7 from './detailsTemplates/Homework7';
+    import Homework8 from './detailsTemplates/Homework8';
+    import Homework9 from './detailsTemplates/Homework9';
 
     export default {
         name: 'DetailsPage',
         components: {
-            Homework1
+            Homework1,
+            Homework2,
+            Homework3,
+            Homework4,
+            Homework5,
+            Homework6,
+            Homework7,
+            Homework8,
+            Homework9
         },
         props: {
             detailsData: Object
@@ -35,7 +51,7 @@
             return {};
         },
         mounted() {
-
+            EventBus.$on('triggerCloseAnimation', this.closeDetailsPage);
         },
         methods: {
             closeDetailsPage() {
@@ -73,15 +89,24 @@
         
         flex-direction: column;
     }
-
-    nav {
-        position: absolute;
+    
+    .details-page__container {
+        flex: 1;
         
-        width: 100%;
-        height: 64px;
+        overflow-y: auto;
+    }
+    
+    .details-page__container__title-wrapper {
+        position: relative;
+        margin: 0 16px;
+        border-bottom: 2px solid;
+    }
+    
+    .details-page__container__title-wrapper__title {
+        margin: 8px;
+        padding: 32px;
 
-        display: flex;
-        justify-content: flex-end;
+        font-size: 24px;
     }
 
     button {
@@ -90,6 +115,9 @@
         background: transparent;
         border: none;
         cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 
     button > i {
@@ -98,31 +126,14 @@
         color: var(--main-text-color);
     }
 
-    .details-page__container {
-        flex: 1;
-        
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .details-page__container__title-wrapper {
-        margin: 0 16px;
-        
-        border-bottom: 2px solid;
-
-        display: flex;
-
-        justify-content: space-between;
-    }
-    
-    .details-page__container__title-wrapper__title {
-        margin: 8px;
-        padding: 32px;
-    }
 
     .details-page__container__content-wrapper {
         flex: 1;
 
         padding: 32px;
+
+        max-width: 60%;
+
+        margin: 0 auto;
     }
 </style>

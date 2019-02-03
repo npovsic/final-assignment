@@ -1,6 +1,6 @@
 <template>
     <ul class="projects-list">
-        <ProjectCard v-for="project in projects" :project="project"></ProjectCard>
+        <ProjectCard v-for="(project, index) in projects" :index="index + 1" :project="project"></ProjectCard>
     </ul>
 </template>
 
@@ -13,49 +13,66 @@
             const projects = [
                 {
                     dividerColor: '#9198CE',
+                    colorClass: 'dark-text',
                     title: 'Identiteta skupine',
-                    text: 'Za prvo nalogo smo ustvarili identiteto naše skupine.',
+                    text: 'Kaj je identiteta naše skupine? Kako bi se predstavili ljudem?',
                     component: 'Homework1'
                 },
                 {
                     dividerColor: '#90ADA8',
+                    colorClass: 'dark-text',
                     title: 'Tipografija',
-                    text: 'Pri drugi nalogi smo na nek nov način predstavili tip tipografije.'
+                    text: 'Pisava niso samo črke. Tudi iz oblik v naravi lahko ustvarimo sporočilo. Kakšne oblike bi izbrali?',
+                    component: 'Homework2'
                 },
                 {
                     dividerColor: '#54469E',
+                    colorClass: 'light-text',
                     title: 'Piktogrami',
-                    text: 'Imeli smo nalogo ustvariti piktograme, slikovne elemente, ki naj bi zelo jasno prikazali izbrane pojme.'
+                    text: 'Kako bi z uporabo slikovnih elementov predstavili nek pojem?',
+                    component: 'Homework3'
                 },
                 {
                     dividerColor: '#833B22',
-                    title: 'Plakat',
-                    text: 'Plakat je kljub zmanjšanem vplivu še vedno močno zastopan.'
+                    colorClass: 'light-text',
+                    title: 'Plakat, transparent, vabilo',
+                    text: 'Kako bi pritegnili pozornost ljudi z nekim elementom v prostoru, naj bo to plakat, grafit ali kaj drugega?',
+                    component: 'Homework4'
                 },
                 {
                     dividerColor: '#eeeeee',
+                    colorClass: 'dark-text',
                     title: 'Poster za film',
-                    text: 'Za film "Majhna bela laž" smo ustvarili nov poster.'
+                    text: 'Ustvarjanje posterjev za filme ni preprosta naloga. Kako bi za izbran film oblikovali nov poster?',
+                    component: 'Homework5'
                 },
                 {
                     dividerColor: '#C26180',
+                    colorClass: 'light-text',
                     title: 'Embalaža',
-                    text: 'Vsako leto odvržemo na tone embalaže. Kako bi ustvarili tako, da bi jo lahko ponovno uporabili?'
+                    text: 'Vsako leto odvržemo na tone embalaže. Kako embalažo bi ustvarili, da bi jo lahko ponovno uporabili?',
+                    component: 'Homework6'
                 },
                 {
                     dividerColor: '#CDA243',
+                    colorClass: 'dark-text',
                     title: 'Knjiga',
-                    text: 'Ukvarjali smo se s celotnim procesom oblikovanja knjige, od črk do platnic.'
+                    text: 'Oblikovanje knjige je dolg in zapleten proces. Kaj vse je treba upoštevati preden knjiga sploh pride na police?',
+                    component: 'Homework7'
                 },
                 {
                     dividerColor: '#8E2823',
-                    title: 'Plakati Miltona Glaserja',
-                    text: 'Za razstavo svojih del v Mednarodnem grafičnem likovnem centru v Ljubljani je Milton Glaser ustvaril plakat. Kako bi ga lahko izboljšali?'
+                    colorClass: 'light-text',
+                    title: 'Plakat Miltona Glaserja',
+                    text: 'Za razstavo svojih del v Mednarodnem grafičnem likovnem centru v Ljubljani je Milton Glaser ustvaril plakat. Kako bi ga lahko izboljšali?',
+                    component: 'Homework8'
                 },
                 {
                     dividerColor: '#5A8152',
+                    colorClass: 'light-text',
                     title: 'Kažipot',
-                    text: 'Za zadnjo nalogo smo si morali izbrali neko pot ali stavbo in ustvariti kažipot, ki bo jasen in razumljiv vsem ljudem.'
+                    text: 'Zemljevidi in kažipoti so odličen način za orientacijo v prostoru. Kam bi ga bilo smiselno dodati in kako bi to naredili?',
+                    component: 'Homework9'
                 }
             ];
 
